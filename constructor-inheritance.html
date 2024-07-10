@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function Employee(firstName) {
+            this.firstName = firstName;
+            this.sayHello = function (name) {
+                console.info(`Hello Employee ${name}, my name is ${this.firstName}`);
+            }
+        }
+
+        function Manager(firstName, lastName) {
+            Employee.call(this, firstName);
+            this.lastName = lastName;
+        }
+
+        const john = new Manager("John", "Doe");
+        console.info(john);
+
+        // character
+        function Mob(name, race, hp, attack, agility) {
+            this.name = name;
+            this.race = race;
+            this.hp = hp;
+            this.attack = attack;
+            this.agility = agility;
+
+            this.greetings = function (name = "player") {
+                console.info(`greetings ${name}, I'am ${this.name} the ${this.race}`);
+            }
+        }
+
+        function Elf(name, race, hp, attack, agility, x) {
+            Mob.call(this, name, race, hp, attack, agility)
+            this.x = x;
+        }
+
+        const glazt = new Elf("Glazt", "Elf", "100", 12, 30, "xxx");
+        console.info(glazt);
+        glazt.greetings();
+
+    </script>
+
+</body>
+
+</html>

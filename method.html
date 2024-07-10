@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Person {
+
+            constructor(name, lastName) {
+                this.name = name;
+                this.lastName = lastName;
+            }
+
+            sayHello(name) {
+                console.info(`Hello ${name}, my name is ${this.name} ${this.lastName}`);
+            }
+
+        }
+
+        const john = new Person("john", "doe");
+        console.info(john);
+        console.info(john.name);
+        john.sayHello("michel");
+
+        const jean = new Person("jean", "doe");
+        console.info(jean);
+        console.info(jean.name);
+        jean.sayHello("michel");
+
+    </script>
+
+</body>
+
+</html>
