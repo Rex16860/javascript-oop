@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Counter {
+            // private field
+            #counter = 0;
+
+            increment() {
+                this.#counter++;
+            }
+            decrement() {
+                this.#counter--;
+            }
+
+            // get counter 
+            get result() {
+                return this.#counter;
+            }
+        }
+
+        const c = new Counter()
+        c.increment();
+        c.increment();
+        c.increment();
+        c.increment();
+        c.increment();
+        console.info(c.result);
+
+        c.decrement();
+        c.decrement();
+        console.info(c.result);
+
+    </script>
+
+</body>
+
+</html>

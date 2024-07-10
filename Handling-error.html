@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class MathUtil {
+            static factorialValue(n) {
+                let v = n ?? "nullist";
+                if (v === 0 || v === "nullist") throw new Error("value must be greater than 0 or either undefined nor null");
+
+                if (v === 1) return 1;
+
+                let factorial = n * MathUtil.factorialValue(n - 1);
+                return factorial;
+            }
+        }
+
+        try {
+            console.info(MathUtil.factorialValue());
+            console.info("take a look");
+        } catch (e) {
+            console.error(`Error Massage: ${e.message}`);
+        } finally {
+            console.info("error handling ends");
+        }
+
+        console.info("Hello World");
+        console.info(MathUtil.factorialValue(5));
+
+
+        class Counter {
+            #counter = 0;
+
+            next() {
+                try {
+                    return this.#counter;
+                } finally {
+                    this.#counter++;
+                }
+            }
+        }
+
+        const counter = new Counter();
+        console.info(counter.next())
+        console.info(counter.next())
+        console.info(counter.next())
+        console.info(counter.next())
+        console.info(counter.next())
+
+    </script>
+</body>
+
+</html>

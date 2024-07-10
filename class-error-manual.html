@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        class ErrorValidation extends Error {
+            constructor(message, field) {
+                super(message);
+                this.field = field;
+            }
+        }
+
+        class MathUtil {
+            static factorialValue(number) {
+                let v = number ?? "nullist";
+
+                // throw error
+                if (v === 0 || v === "nullist") throw new ErrorValidation("value must be greater than 0 or either undefined nor null", "number");
+
+                if (v === 1) return 1;
+
+                let factorial = v * MathUtil.factorialValue(number - 1);
+                return factorial;
+            }
+        }
+
+        // error handling
+        try {
+            console.info(MathUtil.factorialValue());
+            console.info("take a look");
+        } catch (e) {
+            if (e instanceof ErrorValidation) {
+                console.error(`Error at field: ${e.field}, ${e.message}`);
+            } else {
+                console.error(`Error Massage: ${e.message}`);
+            }
+        } finally {
+            console.info("error handling ends");
+        }
+
+        console.info("Hello World");
+        console.info(MathUtil.factorialValue(5));
+
+    </script>
+</body>
+
+</html>

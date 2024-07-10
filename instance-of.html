@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Employee {
+
+        }
+        class Programmer extends Employee {
+
+        }
+
+        const john = new Employee();
+        const reza = new Programmer();
+
+        console.info(john instanceof Employee); // t
+        console.info(john instanceof Programmer); // f
+        console.info(reza instanceof Employee); // t
+        console.info(reza instanceof Programmer); // t
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class MathUtil {
+            static factorial(v) {
+                if (v === 0 || v === undefined || v === null) throw new Error("value must greater than 0 or either undefined nor null");
+
+                if (v === 1) return 1;
+
+                let factorial = v * MathUtil.factorial(v - 1);
+                return factorial;
+            }
+        }
+        console.info(MathUtil.factorial());
+
+        const factorial = MathUtil.factorial(10);
+        console.info(factorial);
+
+
+    </script>
+
+</body>
+
+</html>
